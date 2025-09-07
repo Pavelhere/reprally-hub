@@ -2,14 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
+/* RepRally Design System - Mobile-first store ordering app */
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* RepRally Brand Colors (sampled from screenshots) */
+    --brand-green-600: 156 100% 29%;     /* #0C8A60 - primary CTA buttons */
+    --brand-green-700: 156 100% 24%;     /* #0A6D4D - hover states */
+    --brand-green-500: 156 76% 39%;      /* #3FAE82 - progress bars */
+    --brand-green-100: 156 48% 93%;      /* #E6F5EC - light backgrounds */
+    --brand-green-50: 156 48% 96%;       /* #F0F9F4 - subtle backgrounds */
+    
+    /* Gradient Colors */
+    --gradient-start: 156 68% 85%;       /* #CFEFD9 - hero gradient start */
+    --gradient-middle: 180 100% 90%;     /* #CCFDF7 - middle transition */
+    --gradient-end: 225 100% 90%;        /* #CFE6FF - hero gradient end */
+    --accent-lavender: 248 100% 94%;     /* #E7E5FF - accent color */
+    
+    /* Text Colors */
+    --text-primary: 222 84% 5%;          /* #111827 - main text */
+    --text-secondary: 220 14% 42%;       /* #6B7280 - secondary text */
+    --text-muted: 220 9% 65%;            /* #9CA3AF - muted text */
+    --text-inverse: 0 0% 100%;           /* #FFFFFF - white text */
+    
+    /* Status Colors */
+    --success: 142 76% 36%;              /* #16A34A - success states */
+    --warning: 38 92% 50%;               /* #F59E0B - warning states */
+    --danger: 0 74% 50%;                 /* #DC2626 - error states */
+    --info: 217 91% 60%;                 /* #3B82F6 - info states */
+    
+    /* Background Colors */
+    --background: 0 0% 100%;             /* #FFFFFF */
+    --background-secondary: 220 14% 96%; /* #F9FAFB */
+    --surface: 0 0% 100%;                /* #FFFFFF - card backgrounds */
+    --surface-secondary: 220 9% 98%;     /* #F8FAFC */
+    
+    /* Border Colors */
+    --border: 220 13% 91%;               /* #E5E7EB */
+    --border-secondary: 220 9% 95%;      /* #F1F5F9 */
+    
+    /* Component Colors */
+    --card-bg: 0 0% 100%;
+    --foreground: 222 84% 5%;
+    --primary: 156 100% 29%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 84% 5%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 65%;
+    --accent: 156 48% 93%;
+    --accent-foreground: 156 100% 24%;
+    --destructive: 0 74% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 5%;
+    --input: 220 13% 91%;
+    --ring: 156 100% 29%;
+    
+    /* Spacing and Layout */
+    --radius: 16px;                      /* Default border radius */
+    --radius-pill: 50px;                 /* Pill-shaped elements */
+    --radius-card: 20px;                 /* Card border radius */
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 43% 11% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(220 43% 11% / 0.1), 0 2px 4px -1px hsl(220 43% 11% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(220 43% 11% / 0.1), 0 4px 6px -2px hsl(220 43% 11% / 0.05);
+    --shadow-card: 0 4px 20px -4px hsl(220 43% 11% / 0.08);
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-middle)), hsl(var(--gradient-end)));
+    --gradient-card: linear-gradient(180deg, hsl(var(--surface)) 0%, hsl(var(--surface-secondary)) 100%);
+    --gradient-button: linear-gradient(135deg, hsl(var(--brand-green-600)), hsl(var(--brand-green-500)));
+    
+    /* Transitions */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -92,6 +160,38 @@ All colors MUST be HSL.
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+  }
+}
+
+/* Custom Components */
+@layer components {
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .pill {
+    border-radius: var(--radius-pill);
+  }
+  
+  .card-shadow {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .btn-gradient {
+    background: var(--gradient-button);
+  }
+  
+  .text-brand {
+    color: hsl(var(--brand-green-600));
+  }
+  
+  .bg-brand {
+    background-color: hsl(var(--brand-green-600));
+  }
+  
+  .border-brand {
+    border-color: hsl(var(--brand-green-600));
+  }
 }
 
 @layer base {
@@ -100,6 +200,13 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+  }
+  
+  /* Mobile-first responsive touch targets */
+  button, .btn {
+    min-height: 44px;
+    min-width: 44px;
   }
 }

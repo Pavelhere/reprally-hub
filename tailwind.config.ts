@@ -19,6 +19,42 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        
+        // RepRally Brand Colors
+        brand: {
+          50: "hsl(var(--brand-green-50))",
+          100: "hsl(var(--brand-green-100))",
+          500: "hsl(var(--brand-green-500))",
+          600: "hsl(var(--brand-green-600))",
+          700: "hsl(var(--brand-green-700))",
+        },
+        
+        // Gradient Colors
+        gradient: {
+          start: "hsl(var(--gradient-start))",
+          middle: "hsl(var(--gradient-middle))",
+          end: "hsl(var(--gradient-end))",
+        },
+        
+        // Status Colors
+        success: "hsl(var(--success))",
+        warning: "hsl(var(--warning))",
+        danger: "hsl(var(--danger))",
+        info: "hsl(var(--info))",
+        
+        // Text Colors
+        text: {
+          primary: "hsl(var(--text-primary))",
+          secondary: "hsl(var(--text-secondary))",
+          muted: "hsl(var(--text-muted))",
+          inverse: "hsl(var(--text-inverse))",
+        },
+        
+        // Surface Colors
+        surface: {
+          DEFAULT: "hsl(var(--surface))",
+          secondary: "hsl(var(--surface-secondary))",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -62,6 +98,24 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        pill: "var(--radius-pill)",
+        card: "var(--radius-card)",
+      },
+      
+      boxShadow: {
+        card: "var(--shadow-card)",
+      },
+      
+      backgroundImage: {
+        'hero-gradient': 'var(--gradient-hero)',
+        'card-gradient': 'var(--gradient-card)',
+        'button-gradient': 'var(--gradient-button)',
+      },
+      
+      transitionDuration: {
+        fast: "var(--transition-fast)",
+        normal: "var(--transition-normal)",
+        slow: "var(--transition-slow)",
       },
       keyframes: {
         "accordion-down": {
