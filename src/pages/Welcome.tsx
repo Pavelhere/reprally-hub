@@ -1,22 +1,9 @@
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-
 export default function Welcome() {
-  return (
-    <div className="min-h-screen hero-gradient">
+  return <div className="min-h-screen hero-gradient">
       {/* Status Bar Simulation */}
-      <div className="flex justify-between items-center px-4 pt-2 pb-1 text-sm">
-        <span className="font-semibold">16:21</span>
-        <div className="flex items-center space-x-1">
-          <div className="flex space-x-1">
-            <div className="w-1 h-1 bg-black rounded-full"></div>
-            <div className="w-1 h-1 bg-black rounded-full"></div>
-            <div className="w-1 h-1 bg-black rounded-full"></div>
-            <div className="w-1 h-1 bg-black rounded-full"></div>
-          </div>
-          <span className="text-xs ml-2">📶 📶 🔋</span>
-        </div>
-      </div>
+      
 
       {/* Hero Content */}
       <div className="flex flex-col min-h-screen px-6 pt-16 pb-32">
@@ -26,18 +13,7 @@ export default function Welcome() {
         
         {/* Photos Section */}
         <div className="relative mt-8 mb-16">
-          <div className="flex justify-center space-x-4">
-            <div className="w-32 h-20 bg-white rounded-xl overflow-hidden shadow-md">
-              <div className="w-full h-full bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
-                <span className="text-green-600 text-lg">🏪</span>
-              </div>
-            </div>
-            <div className="w-32 h-20 bg-white rounded-xl overflow-hidden shadow-md">
-              <div className="w-full h-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
-                <span className="text-blue-600 text-lg">👨‍💼</span>
-              </div>
-            </div>
-          </div>
+          
         </div>
         
         {/* Main Content */}
@@ -73,6 +49,5 @@ export default function Welcome() {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 }
