@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Plus } from 'lucide-react';
+import { Plus, ScanBarcode } from 'lucide-react';
 import BottomNav from '@/components/BottomNav';
 import CreditCard from '@/components/CreditCard';
 import ProductCard from '@/components/ProductCard';
@@ -41,7 +41,7 @@ export default function Home() {
               onClick={() => openComingSoon('Scan to reorder', 'quickly scan barcodes to reorder your favorite products')}
               className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center"
             >
-              <span className="text-xl">📷</span>
+              <ScanBarcode size={20} className="text-white" />
             </button>
           </div>
           
