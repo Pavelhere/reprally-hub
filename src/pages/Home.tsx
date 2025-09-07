@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Plus, ScanBarcode } from 'lucide-react';
+import { Plus, ScanBarcode, Bot } from 'lucide-react';
 import BottomNav from '@/components/BottomNav';
 import CreditCard from '@/components/CreditCard';
 import ProductCard from '@/components/ProductCard';
@@ -114,7 +114,7 @@ export default function Home() {
               onClick={() => openComingSoon('Assortment recommendations', 'get AI-powered suggestions based on stores like yours')}
               className="p-4 bg-surface rounded-card border border-border-secondary text-left hover:shadow-md transition-shadow"
             >
-              <div className="text-2xl mb-2">🎯</div>
+              <Bot className="text-2xl mb-2 text-brand-600" size={24} />
               <h4 className="font-semibold text-sm">Recommendations</h4>
             </button>
             
