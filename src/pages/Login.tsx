@@ -3,28 +3,20 @@ import { Card } from '@/components/ui/card';
 import { useNavigate } from 'react-router-dom';
 import { useAppStore } from '@/lib/store';
 import storeCounterImage from '@/assets/store-counter.jpg';
-
 export default function Login() {
   const navigate = useNavigate();
-  const { login } = useAppStore();
-
+  const {
+    login
+  } = useAppStore();
   const handleLogin = () => {
     login();
     navigate('/home');
   };
-
-  return (
-    <div className="min-h-screen bg-background p-4 flex items-center justify-center">
+  return <div className="min-h-screen bg-background p-4 flex items-center justify-center">
       {/* Hero Image Section */}
       <div className="absolute top-20 left-1/2 transform -translate-x-1/2">
         <div className="relative">
-          <div className="w-64 h-40 rounded-[3rem] overflow-hidden shadow-lg">
-            <img 
-              src={storeCounterImage} 
-              alt="Store counter with representative" 
-              className="w-full h-full object-cover"
-            />
-          </div>
+          
         </div>
       </div>
       
@@ -37,10 +29,7 @@ export default function Login() {
         </div>
         
         <div className="space-y-4">
-          <Button 
-            onClick={handleLogin}
-            className="w-full bg-brand-600 hover:bg-brand-700 text-white pill h-12"
-          >
+          <Button onClick={handleLogin} className="w-full bg-brand-600 hover:bg-brand-700 text-white pill h-12">
             Login as Sample Market (Tier 2, $5k limit)
           </Button>
           
@@ -49,6 +38,5 @@ export default function Login() {
           </div>
         </div>
       </Card>
-    </div>
-  );
+    </div>;
 }
