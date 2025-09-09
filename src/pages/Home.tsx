@@ -9,24 +9,30 @@ import ComingSoonModal from '@/components/ComingSoonModal';
 import { useAppStore } from '@/lib/store';
 import { REORDER_PRODUCTS, ORDER_GUIDE_PRODUCTS } from '@/lib/seed-data';
 import { Link } from 'react-router-dom';
-
 export default function Home() {
-  const { products, currentStore, addToCart } = useAppStore();
+  const {
+    products,
+    currentStore
+  } = useAppStore();
   const [comingSoonModal, setComingSoonModal] = useState<{
     isOpen: boolean;
     title: string;
     description: string;
-  }>({ isOpen: false, title: '', description: '' });
-
+  }>({
+    isOpen: false,
+    title: '',
+    description: ''
+  });
   const reorderProducts = products.filter(p => REORDER_PRODUCTS.includes(p.id));
   const orderGuideProducts = products.filter(p => ORDER_GUIDE_PRODUCTS.includes(p.id));
-
   const openComingSoon = (title: string, description: string) => {
-    setComingSoonModal({ isOpen: true, title, description });
+    setComingSoonModal({
+      isOpen: true,
+      title,
+      description
+    });
   };
-
-  return (
-    <div className="min-h-screen bg-background pb-20">
+  return <div className="min-h-screen bg-background pb-20">
       {/* Header */}
       <div className="hero-gradient px-4 pt-12 pb-8">
         <div className="max-w-md mx-auto">
@@ -37,10 +43,7 @@ export default function Home() {
               </h1>
               <p className="text-text-secondary">{currentStore.name}</p>
             </div>
-            <button 
-              onClick={() => openComingSoon('Scan to reorder', 'quickly scan barcodes to reorder your favorite products')}
-              className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center"
-            >
+            <button onClick={() => openComingSoon('Scan to reorder', 'quickly scan barcodes to reorder your favorite products')} className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
               <ScanBarcode size={20} className="text-white" />
             </button>
           </div>
@@ -74,20 +77,8 @@ export default function Home() {
               View all
             </Button>
           </div>
-          <Button 
-            onClick={() => {
-              reorderProducts.forEach(product => {
-                addToCart(product.id, 1);
-              });
-            }}
-            className="w-full mb-4"
-          >
-            Add all to cart
-          </Button>
-          <div className="space-y-3">
-            {reorderProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
+          <div className="space-y-3 rounded-sm text-green-700 bg-emerald-100">
+            {reorderProducts.map(product => <ProductCard key={product.id} product={product} />)}
           </div>
         </div>
 
@@ -100,8 +91,7 @@ export default function Home() {
             </Button>
           </div>
           <div className="grid grid-cols-2 gap-3">
-            {orderGuideProducts.map((product) => (
-              <div key={product.id} className="space-y-2">
+            {orderGuideProducts.map(product => <div key={product.id} className="space-y-2">
                 <Card className="p-3 text-center border border-brand-600 bg-brand-50">
                   <div className="w-12 h-12 bg-gradient-start rounded-lg mx-auto mb-2 flex items-center justify-center">
                     <span className="text-lg">📦</span>
@@ -111,8 +101,7 @@ export default function Home() {
                   </h4>
                   <p className="text-xs text-text-muted">{product.case_size}</p>
                 </Card>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
 
@@ -120,18 +109,12 @@ export default function Home() {
         <div className="space-y-4">
           <h2 className="text-xl font-bold text-text-primary">More Tools</h2>
           <div className="grid grid-cols-2 gap-3">
-            <button
-              onClick={() => openComingSoon('Assortment recommendations', 'get AI-powered suggestions based on stores like yours')}
-              className="p-4 bg-surface rounded-card border border-border-secondary text-left hover:shadow-md transition-shadow"
-            >
+            <button onClick={() => openComingSoon('Assortment recommendations', 'get AI-powered suggestions based on stores like yours')} className="p-4 bg-surface rounded-card border border-border-secondary text-left hover:shadow-md transition-shadow">
               <Bot className="text-2xl mb-2 text-brand-600" size={24} />
               <h4 className="font-semibold text-sm">Recommendations</h4>
             </button>
             
-            <button
-              onClick={() => openComingSoon('Standing orders', 'set up automatic recurring orders for your best sellers')}
-              className="p-4 bg-surface rounded-card border border-border-secondary text-left hover:shadow-md transition-shadow"
-            >
+            <button onClick={() => openComingSoon('Standing orders', 'set up automatic recurring orders for your best sellers')} className="p-4 bg-surface rounded-card border border-border-secondary text-left hover:shadow-md transition-shadow">
               <Repeat className="text-2xl mb-2 text-brand-600" size={24} />
               <h4 className="font-semibold text-sm">Auto Orders</h4>
             </button>
@@ -141,12 +124,9 @@ export default function Home() {
 
       <BottomNav />
       
-      <ComingSoonModal
-        isOpen={comingSoonModal.isOpen}
-        onClose={() => setComingSoonModal(prev => ({ ...prev, isOpen: false }))}
-        title={comingSoonModal.title}
-        description={comingSoonModal.description}
-      />
-    </div>
-  );
+      <ComingSoonModal isOpen={comingSoonModal.isOpen} onClose={() => setComingSoonModal(prev => ({
+      ...prev,
+      isOpen: false
+    }))} title={comingSoonModal.title} description={comingSoonModal.description} />
+    </div>;
 }
