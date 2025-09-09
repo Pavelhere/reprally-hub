@@ -11,7 +11,7 @@ import { REORDER_PRODUCTS, ORDER_GUIDE_PRODUCTS } from '@/lib/seed-data';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
-  const { products, currentStore } = useAppStore();
+  const { products, currentStore, addToCart } = useAppStore();
   const [comingSoonModal, setComingSoonModal] = useState<{
     isOpen: boolean;
     title: string;
@@ -74,6 +74,16 @@ export default function Home() {
               View all
             </Button>
           </div>
+          <Button 
+            onClick={() => {
+              reorderProducts.forEach(product => {
+                addToCart(product.id, 1);
+              });
+            }}
+            className="w-full mb-4"
+          >
+            Add all to cart
+          </Button>
           <div className="space-y-3">
             {reorderProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
