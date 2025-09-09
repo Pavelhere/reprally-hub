@@ -22,9 +22,7 @@ export default function Welcome() {
             <h1 className="text-3xl font-bold text-text-primary leading-tight">
               Welcome to RepRally
             </h1>
-            <p className="text-lg text-text-secondary leading-relaxed max-w-xs mx-auto">
-              Login and start earning immediately. Enjoy exclusive access to top-rated products
-            </p>
+            <p className="text-lg text-text-secondary leading-relaxed max-w-xs mx-auto">Enjoy exclusive access to top-rated products</p>
           </div>
           
           <div className="space-y-4 pt-8">
