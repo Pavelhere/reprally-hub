@@ -35,7 +35,7 @@ export default function Orders() {
   return (
     <div className="min-h-screen bg-background pb-20">
       {/* Header */}
-      <div className="bg-surface border-b border-border-secondary px-4 pt-12 pb-4">
+      <div className="hero-gradient px-4 pt-12 pb-8">
         <div className="max-w-md mx-auto">
           <h1 className="text-2xl font-bold text-text-primary">Orders</h1>
           <p className="text-text-secondary">Track your order status</p>

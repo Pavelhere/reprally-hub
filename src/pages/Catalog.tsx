@@ -28,9 +28,16 @@ export default function Catalog() {
   return (
     <div className="min-h-screen bg-background pb-20">
       {/* Header */}
-      <div className="bg-surface border-b border-border-secondary px-4 pt-12 pb-4 sticky top-0 z-40">
-        <div className="max-w-md mx-auto space-y-4">
+      <div className="hero-gradient px-4 pt-12 pb-8">
+        <div className="max-w-md mx-auto">
           <h1 className="text-2xl font-bold text-text-primary">Catalog</h1>
+          <p className="text-text-secondary">Browse and order products</p>
+        </div>
+      </div>
+
+      {/* Search and Filters */}
+      <div className="bg-surface border-b border-border-secondary px-4 py-4 sticky top-0 z-40">
+        <div className="max-w-md mx-auto space-y-4">
           
           {/* Search */}
           <div className="relative">
