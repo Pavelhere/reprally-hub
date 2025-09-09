@@ -1,5 +1,15 @@
 import { Store, Rep, Brand, Product, Order, Invoice } from './types';
 
+// Import product images
+import granolaBitesImg from '../assets/granola-bites.jpg';
+import trailMixImg from '../assets/trail-mix.jpg';
+import proteinBarsImg from '../assets/protein-bars.jpg';
+import coldBrewImg from '../assets/cold-brew-coffee.jpg';
+import sparklingWaterImg from '../assets/sparkling-water.jpg';
+import energyDrinksImg from '../assets/energy-drinks.jpg';
+import proteinPowderImg from '../assets/protein-powder.jpg';
+import vitaminGummiesImg from '../assets/vitamin-gummies.jpg';
+
 export const STORE: Store = {
   id: 'store-1',
   name: 'Sample Market, Brooklyn',
@@ -41,7 +51,7 @@ export const PRODUCTS: Product[] = [
     case_size: '12 pack of 1oz.',
     price_cents: 3800,
     category: 'Snacks',
-    image_url: '/api/placeholder/200/200',
+    image_url: granolaBitesImg,
     active: true,
   },
   {
@@ -51,7 +61,7 @@ export const PRODUCTS: Product[] = [
     case_size: '8 pack of 2oz.',
     price_cents: 4200,
     category: 'Snacks',
-    image_url: '/api/placeholder/200/200',
+    image_url: trailMixImg,
     active: true,
   },
   {
@@ -61,7 +71,7 @@ export const PRODUCTS: Product[] = [
     case_size: '24 pack',
     price_cents: 5600,
     category: 'Health',
-    image_url: '/api/placeholder/200/200',
+    image_url: proteinBarsImg,
     active: true,
   },
   {
@@ -71,7 +81,7 @@ export const PRODUCTS: Product[] = [
     case_size: '12 bottles',
     price_cents: 3400,
     category: 'Beverages',
-    image_url: '/api/placeholder/200/200',
+    image_url: coldBrewImg,
     active: true,
   },
   {
@@ -81,7 +91,7 @@ export const PRODUCTS: Product[] = [
     case_size: '24 cans',
     price_cents: 2800,
     category: 'Beverages',
-    image_url: '/api/placeholder/200/200',
+    image_url: sparklingWaterImg,
     active: true,
   },
   {
@@ -91,7 +101,7 @@ export const PRODUCTS: Product[] = [
     case_size: '12 cans',
     price_cents: 4800,
     category: 'Beverages',
-    image_url: '/api/placeholder/200/200',
+    image_url: energyDrinksImg,
     active: true,
   },
   {
@@ -101,7 +111,7 @@ export const PRODUCTS: Product[] = [
     case_size: '6 containers',
     price_cents: 8900,
     category: 'Health',
-    image_url: '/api/placeholder/200/200',
+    image_url: proteinPowderImg,
     active: true,
   },
   {
@@ -111,7 +121,7 @@ export const PRODUCTS: Product[] = [
     case_size: '12 bottles',
     price_cents: 3600,
     category: 'Health',
-    image_url: '/api/placeholder/200/200',
+    image_url: vitaminGummiesImg,
     active: true,
   },
 ];
